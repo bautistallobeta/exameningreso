@@ -1,4 +1,8 @@
-const express = require('express');
+import express from 'express';
+import peliculasRoutes from './routes/peliculasRoutes.js'
+import reservasRoutes from './routes/reservasRoutes.js'
+
+
 const app = express();
 const PORT = 8080;
 
@@ -12,13 +16,6 @@ app.get('/', (req, res) => {
     res.send('Servidor corriendo');
 })
 
-app.get('/peliculas/:fecha', (req, res) => {
-    const fecha = req.params.fecha;
-    const peliculas = [
-        { nombre: 'Avatar', fecha: '2023-10-01' },
-        { nombre: 'Avengers', fecha: '2023-10-02' },
-        { nombre: 'Titanic', fecha: '2023-10-03' },
-    ];
-    const peliculasFiltradas = peliculas.filter(pelicula => pelicula.fecha === fecha);
-    res.json(peliculasFiltradas);
-});
+app.use('/peliculas', peliculasRoutes); 
+
+app.use('/reservas', reservasRoutes);
