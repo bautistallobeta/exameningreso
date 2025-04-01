@@ -7,26 +7,27 @@
 
 ## Instalación
 
-_1._ Clonar el repositorio
-_2._ Ejecutar el script _'cinedb_ScriptCrearDB.sql'_ para crear la DB
-_3._ Ejecutar el script _'cinedb_LlenarCrearDB'_ para poblar la DB
-_4._ Instalar dependencias:
-`npm install`
-_5._ Crear un archivo con el nombre _'.env'_ y cargar los valores de las variables de entorno como muestra el ejemplo.
+1. Clonar el repositorio
 
-- Ejemplo:
+2. Ejecutar el script _'cinedb_ScriptCrearDB.sql'_ para crear la DB
 
-```
-PORT=8080
-DB_PORT=3306
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=root
-DB_NAME=cinedb
-```
+3. Ejecutar el script _'cinedb_LlenarCrearDB'_ para poblar la DB
 
-_6._ Ejecutar la API:
-`npm start`
+4. Instalar dependencias:
+   `npm install`
+
+5. Crear un archivo con el nombre _'.env'_ y cargar los valores de las variables de entorno como muestra el ejemplo.
+   - Ejemplo:
+   ```
+   PORT=8080
+   DB_PORT=3306
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=root
+   DB_NAME=cinedb
+   ```
+6. Ejecutar la API:
+   `npm start`
 
 ## Documentacion
 
@@ -42,4 +43,12 @@ _6._ Ejecutar la API:
 │── .env # Variables de entorno  
 │── README.md # Documentación
 
-## Consideraciones adicionales
+## Importante
+
+### Consideraciones adicionales
+
+- Si se usa el archivo para poblar la db se debe tener en cuenta que:
+  - Solo hay 5 peliculas cargadas
+  - Hay pocas butacas cargadas por sala, por lo que conviene probar la reserva en cantidades de 1 a 5 reservas
+  - Solo se cargaron funciones en las fechas _2025-03-30_ , _2025-03-31_ y _2025-04-01_
+  - Este archivo puebla la db con pocos datos de prueba
