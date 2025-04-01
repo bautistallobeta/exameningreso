@@ -5,7 +5,8 @@ const pool = mysql.createPool({
     user: 'root',
     password: 'admin',
     database: 'cinedb',
-    port: 3306
+    port: 3306,
+    timezone: 'Z' 
 }).promise(); 
 
 

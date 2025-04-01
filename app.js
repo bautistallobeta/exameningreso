@@ -2,18 +2,20 @@ import express from 'express';
 import peliculasRoutes from './routes/peliculasRoutes.js'
 import reservasRoutes from './routes/reservasRoutes.js'
 
-
 const app = express();
+
 const PORT = 8080;
 
-app.use(express.json()); // middleware para que se parsee el json que viene en el body antes que se ejecute la ufncion callback del 
+// Middleware para parsear el json que llega en el body 
+app.use(express.json()); 
 
 app.listen(PORT, () => {
     console.log('Servidor corriendo en http://localhost:'+ PORT);
 })
 
+// Ruta para probar que funciona
 app.get('/', (req, res) => {
-    res.send('Servidor corriendo');
+    res.send('App corriendo');
 })
 
 app.use('/peliculas', peliculasRoutes); 
