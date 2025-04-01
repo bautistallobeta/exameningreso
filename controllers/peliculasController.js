@@ -10,7 +10,6 @@ export const getPeliculasEnProyeccion = async (req, res) => {
         }
         res.json(resultados[0]);  
     } catch (err) {
-        console.error('Error en el stored procedure:', err);
         res.status(500).send('Error en la DB');
     }
 };
@@ -25,7 +24,6 @@ export const getPeliculaPorId = async (req, res) => {
         }
         res.json(resultados[0]);  
     } catch (err) {
-        console.error('Error en el stored procedure:', err);
         res.status(500).send('Error en la DB');
     }
 };

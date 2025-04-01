@@ -2,10 +2,14 @@ import express from 'express';
 import swaggerDocs from './swaggerConfig.js';
 import peliculasRoutes from './routes/peliculasRoutes.js'
 import reservasRoutes from './routes/reservasRoutes.js'
+import dotenv from 'dotenv';
+
+// Carga las variables del .env
+dotenv.config();  
 
 const app = express();
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;;
 
 // Middleware para parsear el json que llega en el body 
 app.use(express.json()); 

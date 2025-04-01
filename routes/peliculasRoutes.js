@@ -52,9 +52,25 @@ const router = express.Router();
  *                   type: string
  *                   example: "1100.00"
  *       404:
- *         description: No se encontraron funciones en la fecha ingresada
+ *         description: Funciones no encontradas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "No se encontraron funciones para esa fecha"
  *       500:
  *         description: Error en la base de datos
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Error en la DB"
  */
 // Ruta para obtener las películas en proyección segun la fecha
 router.get('/:fecha([0-9]{4}-[0-9]{2}-[0-9]{2})', getPeliculasEnProyeccion);
@@ -106,8 +122,24 @@ router.get('/:fecha([0-9]{4}-[0-9]{2}-[0-9]{2})', getPeliculasEnProyeccion);
  *                   example: "Ciencia Ficción"
  *       404:
  *         description: No se encontró la pelicula con el Id ingresado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Película no encontrada"
  *       500:
  *         description: Error en la base de datos
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Error en la DB"
  */
 
 // Ruta para obtener una película por su ID

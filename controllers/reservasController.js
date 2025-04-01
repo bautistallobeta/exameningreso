@@ -23,7 +23,7 @@ export const reservarFuncion = async (req, res) => {
     // Llamada al stored procedure
     try {
         const [resultados] = await pool.query('CALL ReservarFuncion(?, ?, ?)', [IdFuncion, Cantidad, DNI]);
-        res.send([resultados][0]);
+        res.send([resultados][0][0]); 
     } catch (err) {
         // Si el error viene dado por alguno de los SIGNAL en MySQL, devuelve ese mensaje
         if (err.code === 'ER_SIGNAL_EXCEPTION') {
