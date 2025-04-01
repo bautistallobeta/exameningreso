@@ -1,4 +1,5 @@
 import express from 'express';
+import swaggerDocs from './swaggerConfig.js';
 import peliculasRoutes from './routes/peliculasRoutes.js'
 import reservasRoutes from './routes/reservasRoutes.js'
 
@@ -9,9 +10,8 @@ const PORT = 8080;
 // Middleware para parsear el json que llega en el body 
 app.use(express.json()); 
 
-app.listen(PORT, () => {
-    console.log('Servidor corriendo en http://localhost:'+ PORT);
-})
+// Inicializa Swagger
+swaggerDocs(app);
 
 // Ruta para probar que funciona
 app.get('/', (req, res) => {
@@ -21,3 +21,9 @@ app.get('/', (req, res) => {
 app.use('/peliculas', peliculasRoutes); 
 
 app.use('/reservas', reservasRoutes);
+
+app.listen(PORT, () => {
+    console.log('Servidor corriendo en http://localhost:'+ PORT);
+    console.log('Documentación Swagger en http://localhost:'+ PORT + '/api-docs');
+})
+
