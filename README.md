@@ -13,10 +13,12 @@
 
 3. Ejecutar el script _'cinedb_LlenarCrearDB'_ para poblar la DB
 
-4. Instalar dependencias:
+4. Ejecutar el script _'cinedb_StoredProcedures'_ para crear los Procedimientos Almacenados
+
+5. Instalar dependencias:
    `npm install`
 
-5. Crear un archivo con el nombre _'.env'_ y cargar los valores de las variables de entorno como muestra el ejemplo.
+6. Crear un archivo con el nombre _'.env'_ y cargar los valores de las variables de entorno como muestra el ejemplo.
    - Ejemplo:
    ```
    PORT=8080
@@ -26,7 +28,7 @@
    DB_PASSWORD=root
    DB_NAME=cinedb
    ```
-6. Ejecutar la API:
+7. Ejecutar la API:
    `npm start`
 
 ## Documentacion
