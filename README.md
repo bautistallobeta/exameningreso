@@ -1,4 +1,6 @@
 # API Cine - Examen Ingreso Backend
+## Info. General
+El Examen fue realizado con MySQL como motor de base de datos, y Node.js con Express.js para el desarrollo de la API.
 
 ## Requisitos
 
@@ -41,6 +43,7 @@
 │── /routes # Definición de rutas  
 │── app.js # Configuración principal del servidor  
 │── db.js # Conexión con la base de datos  
+│── swaggerConfig.js # Configuracion de Swagger  
 │── package.json # Dependencias y scripts  
 │── .env # Variables de entorno  
 │── README.md # Documentación
